@@ -1,0 +1,23 @@
+
+.main-content {
+    padding-bottom: 60px; 
+    padding: 20px;
+    overflow-y: auto; 
+  }
+  
+  .message-bubble {
+    max-width: 70%; 
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0; 
+    border-radius: 15px;
+
+  }
+  
+  .user-icon-group {
+    display: flex; 
+    justify-content: center; 
+    margin: 20px 0; 
+  }
+  
+  
