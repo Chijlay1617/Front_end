@@ -1,11 +1,11 @@
 import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-const { Header, Content, Sider } = Layout;
-const items1 = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
+import HomePage from './pages/ChatBotHomePage';
+import NavBar from './components/NavBar';
+
+const { Sider } = Layout;
+
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
   const key = String(index + 1);
   return {
@@ -23,28 +23,11 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, i
 });
 const App = () => {
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer },
   } = theme.useToken();
   return (
     <Layout>
-      <Header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={items1}
-          style={{
-            flex: 1,
-            minWidth: 0,
-          }}
-        />
-      </Header>
+      <NavBar />
       <Layout>
         <Sider
           width={200}
@@ -77,17 +60,7 @@ const App = () => {
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <Content
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
-            }}
-          >
-            Content
-          </Content>
+          <HomePage />
         </Layout>
       </Layout>
     </Layout>
