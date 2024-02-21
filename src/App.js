@@ -6,17 +6,16 @@ import NavBar from './components/NavBar';
 
 const { Sider } = Layout;
 
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
+const items2 = ['15', '30', '45'].map((time, index) => {
   const key = String(index + 1);
   return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
+    key: `day${key}`,
+    label: `day ${key}`,
     children: new Array(4).fill(null).map((_, j) => {
       const subKey = index * 4 + j + 1;
       return {
         key: subKey,
-        label: `option${subKey}`,
+        label: `topic${subKey}`,
       };
     }),
   };
@@ -38,7 +37,7 @@ const App = () => {
           <Menu
             mode="inline"
             defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
+            defaultOpenKeys={['day1', 'day2']}
             style={{
               height: '100%',
               borderRight: 0,
